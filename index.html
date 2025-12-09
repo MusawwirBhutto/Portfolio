@@ -63,10 +63,22 @@
           Specializing in <b>high-performance mobile apps</b> & scalable solutions.
           Driven by innovation and a strong product mindset.
         </p>
+
+<div class="hero-buttons" style="display: flex; gap: 15px; justify-content: center; margin-top: 2rem; flex-wrap: wrap;">
+    
+    <a href="#projects" class="btn cta-btn">
+        <i class="fas fa-eye"></i> See My Work
+    </a>
+
+    <a href="Musawwir_Bhutto_CV.pdf" download="Musawwir_Bhutto_CV" class="btn secondary-btn">
+        <i class="fas fa-file-download"></i>  Download CV
+    </a>
+
+</div>
+
+
         
-        <a href="#projects" class="btn cta-btn">
-            <i class="fas fa-eye"></i> See My Work
-        </a>
+      
       </div>
     </section>
 
@@ -137,10 +149,11 @@
         
         <div class="project-card premium-project">
           <div class="project-thumb">
-            <div class="video-container">
+            <div class="video-container" style="position: relative; width: 100%; padding-bottom: 56.25%; height: 0; overflow: hidden;">
               <iframe
                 src="https://www.youtube.com/embed/e1e2hKfkKpk"
                 title="Catalog App Demo"
+                style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; border: 0;"
                 allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
                 allowfullscreen
               ></iframe>
@@ -159,10 +172,14 @@
 
         <div class="project-card premium-project">
           <div class="project-thumb">
-             <img src="https://via.placeholder.com/400x300/0078d4/ffffff?text=Groomy+App" alt="Groomy App">
+             <img 
+                src="images/groomin .jpg" 
+                alt="Groomin App" 
+                style="width: 100%; height: 100%; object-fit: cover;"
+             >
           </div>
           <div class="project-info">
-            <h3>Groomy — Booking System</h3>
+            <h3>Groomin — Booking System</h3>
             <p>
               Full-stack booking solution for salons. Features role-based auth, booking slots, and push notifications.
             </p>
@@ -171,14 +188,18 @@
               <li>🔐 REST API & MySQL</li>
             </ul>
             <div style="margin-top: auto;">
-              <a href="https://github.com/MusawwirBhutto/groomy" target="_blank" class="project-link">Source →</a>
+              <a href="https://github.com/MusawwirBhutto/" target="_blank" class="project-link">Source →</a>
             </div>
           </div>
         </div>
 
         <div class="project-card premium-project">
           <div class="project-thumb">
-             <img src="https://via.placeholder.com/400x300/10172a/ffffff?text=Push+Away+Game" alt="Push Away Game">
+             <img 
+                src="images/pushaway_game.png" 
+                alt="Push Away Game" 
+                style="width: 100%; height: 100%; object-fit: cover; object-position: top;"
+             >
           </div>
           <div class="project-info">
             <h3>Push Away Game</h3>
@@ -188,7 +209,7 @@
         </div>
 
       </div>
-    </section>>
+    </section>
 
     <section id="certificates">
   <h2>Certifications & Awards</h2>
@@ -300,7 +321,7 @@
     
     <div class="contact-header">
       <h2>Let's Build Something!</h2>
-      <p>Have a project idea? I'm available for freelance work.</p>
+      <p>Have a project idea? I'm available for freelance work too.</p>
     </div>
 
     <form action="https://formspree.io/f/mqadjpoo" method="POST" class="contact-form" id="contactForm">
@@ -325,7 +346,7 @@
         <label for="message">Message</label>
         <div class="input-wrapper">
           <i class="fas fa-comment-alt input-icon textarea-icon"></i>
-          <textarea id="message" name="message" rows="5" placeholder="Tell me about your project or leave any message..." required></textarea>
+          <textarea id="message" name="message" rows="5" placeholder="leave a message..." required></textarea>
         </div>
       </div>
 
@@ -361,6 +382,7 @@
   </div>
 </section>
 
+
 <div id="cert-modal" class="cert-modal">
   <span class="cert-modal-close" id="cert-modal-close">&times;</span>
   <img class="cert-modal-content" id="cert-modal-img" alt="Certificate View" />
@@ -368,12 +390,15 @@
 
     <footer>
       <div class="footer-content">
-        <span>Designed & Built by <b>Musawwir Bhutto</b> using </span>
+        <span>Designed & Built by <b>Musawwir Bhutto</b> </span>
         <br>
         <span>© 2025 All Rights Reserved.</span>
       </div>
     </footer>
 
     <script src="script.js"></script>
+    
   </body>
+  
 </html>
+

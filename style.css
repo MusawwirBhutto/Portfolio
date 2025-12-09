@@ -1163,58 +1163,50 @@ body.dark .social-btn {
 }
 
 /* Style for the button container to make them sit side-by-side */
-.hero-buttons {
-    display: flex;
-    gap: 15px;
-    justify-content: center; /* Centers them. Change to 'flex-start' if you want them aligned left */
-    flex-wrap: wrap; /* Good for mobile so they stack if screen is too small */
-}
+/* --- Hero Buttons Styling --- */
 
-/* The Ghost/Outline Button Style */
+/* 1. Default Style (Light Mode) */
+/* We make it BLUE by default so it shows up on white backgrounds */
 .secondary-btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
     background: transparent;
-    border: 2px solid var(--primary); /* Assuming you have a --primary variable, otherwise use #0078d4 */
-    color: #fff;
-    padding: 0.8rem 1.5rem;
+    
+    /* use your main blue color variable */
+    border: 2px solid var(--primary); 
+    color: var(--primary); 
+    
+    padding: 12px 24px;
     border-radius: 50px;
-    text-decoration: none;
     font-weight: 600;
+    text-decoration: none;
     transition: all 0.3s ease;
 }
 
+/* Hover Effect (Light Mode) */
 .secondary-btn:hover {
-    background: var(--primary); /* Fills in the color on hover */
-    color: #fff;
+    background: var(--primary);
+    color: #ffffff;
     transform: translateY(-3px);
     box-shadow: 0 5px 15px rgba(0, 120, 212, 0.3);
 }
 
-/* --- Hero Buttons Styling --- */
-
-/* The "Ghost" Button for CV */
-.secondary-btn {
-    display: inline-flex;
-    align-items: center;
-    gap: 8px; /* Space between icon and text */
-    background: transparent; /* See-through background */
-    border: 2px solid #ffffff; /* White border */
-    color: #ffffff; /* White text */
-    padding: 12px 24px;
-    border-radius: 50px; /* Rounded pill shape */
-    font-weight: 600;
-    text-decoration: none;
-    transition: all 0.3s ease;
+/* 2. Dark Mode Override */
+/* When the website is in dark mode, turn the button WHITE */
+body.dark-mode .secondary-btn {
+    border-color: #ffffff;
+    color: #ffffff;
 }
 
-/* Hover Effect for CV Button */
-.secondary-btn:hover {
-    background: #ffffff; /* Fill with white */
-    color: #0f172a; /* Text becomes dark (matches your background) */
-    transform: translateY(-3px); /* Slight lift */
+/* Hover Effect (Dark Mode) */
+body.dark-mode .secondary-btn:hover {
+    background: #ffffff;
+    color: #0f172a; /* Dark text */
     box-shadow: 0 5px 15px rgba(255, 255, 255, 0.2);
 }
 
-/* Update the existing CTA button to align perfectly */
+/* Keep the CTA alignment perfect */
 .cta-btn {
     display: inline-flex;
     align-items: center;

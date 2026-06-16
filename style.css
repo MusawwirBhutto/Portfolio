@@ -48,7 +48,9 @@ body {
   color: #1e293b;
   line-height: 1.7;
   min-height: 100vh;
-  transition: background 0.3s, color 0.3s;
+  transition:
+    background 0.3s,
+    color 0.3s;
   overflow-x: hidden;
 }
 
@@ -93,8 +95,8 @@ header {
   border: 1px solid var(--glass-border);
   border-radius: 50px; /* Pill Shape */
   padding: 0.8rem 2rem;
- flex-wrap: nowrap;
- white-space: nowrap;
+  flex-wrap: nowrap;
+  white-space: nowrap;
   margin: auto;
   box-shadow: 0 10px 30px -10px rgba(0, 0, 0, 0.1);
   pointer-events: all; /* Re-enable clicks */
@@ -195,11 +197,22 @@ body.dark .premium-navbar {
   border: 1px solid rgba(255, 255, 255, 0.1);
   box-shadow: 0 10px 30px -10px rgba(0, 0, 0, 0.5);
 }
-body.dark .nav-links a { color: #cbd5e1; }
-body.dark .nav-links a:hover { color: var(--accent); }
-body.dark .nav-links a::after { background: var(--accent); }
-body.dark #theme-toggle { background: rgba(255, 255, 255, 0.1); color: #fff; }
-body.dark .role { color: #94a3b8; }
+body.dark .nav-links a {
+  color: #cbd5e1;
+}
+body.dark .nav-links a:hover {
+  color: var(--accent);
+}
+body.dark .nav-links a::after {
+  background: var(--accent);
+}
+body.dark #theme-toggle {
+  background: rgba(255, 255, 255, 0.1);
+  color: #fff;
+}
+body.dark .role {
+  color: #94a3b8;
+}
 
 /* =========================================
    4. HERO SECTION (THE CENTERPIECE)
@@ -228,10 +241,10 @@ body.dark .role { color: #94a3b8; }
   inset: -5px;
   border-radius: 50%;
   background: conic-gradient(
-    from 0deg, 
-    transparent 0deg, 
-    var(--primary) 90deg, 
-    var(--accent) 180deg, 
+    from 0deg,
+    transparent 0deg,
+    var(--primary) 90deg,
+    var(--accent) 180deg,
     transparent 360deg
   );
   animation: rotate-border 4s linear infinite;
@@ -252,8 +265,12 @@ body.dark .role { color: #94a3b8; }
 }
 
 @keyframes rotate-border {
-  0% { transform: rotate(0deg); }
-  100% { transform: rotate(360deg); }
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
 }
 
 /* Typography */
@@ -264,7 +281,7 @@ body.dark .role { color: #94a3b8; }
   letter-spacing: -1px;
   color: #1e293b;
   background: none;
- -webkit-background-clip: border-box;
+  -webkit-background-clip: border-box;
   -webkit-text-fill-color: initial;
 }
 body.dark .premium-hero h1 {
@@ -301,7 +318,9 @@ body.dark .premium-hero h1 {
   margin-left: auto;
   margin-right: auto;
 }
-body.dark .premium-hero p { color: #cbd5e1; }
+body.dark .premium-hero p {
+  color: #cbd5e1;
+}
 
 /* Glowing Button */
 .cta-btn {
@@ -350,7 +369,9 @@ body.dark .cta-btn:hover {
   width: 100%;
   margin: auto;
   box-shadow: 0 20px 40px -5px rgba(0, 0, 0, 0.05);
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  transition:
+    transform 0.3s ease,
+    box-shadow 0.3s ease;
 }
 /* Subtle Lift on Hover */
 .card:hover {
@@ -364,7 +385,10 @@ body.dark .card {
   box-shadow: 0 20px 40px -5px rgba(0, 0, 0, 0.4);
 }
 
-.card h2, #projects h2, #skills h2, #certificates h2 {
+.card h2,
+#projects h2,
+#skills h2,
+#certificates h2 {
   font-size: 2.2rem;
   font-weight: 800;
   background: linear-gradient(90deg, var(--primary), #00c6ff);
@@ -398,79 +422,166 @@ body.dark .card {
 /* =========================================
    6. SKILLS (FLOATING CHIPS)
    ========================================= */
-#skills { padding: 4rem 2rem; }
+#skills {
+  padding: 4rem 2rem;
+}
+
+#skills h2 {
+  text-align: center;
+  margin-bottom: 2rem;
+  font-size: 2.3rem;
+  letter-spacing: -0.03em;
+  max-width: 800px;
+  margin-left: auto;
+  margin-right: auto;
+}
 
 .skills-categories {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 2rem;
-  justify-content: center;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 1.75rem;
+  max-width: 1200px;
+  margin: auto;
 }
 
 .skills-category {
-  background: rgba(255, 255, 255, 0.5);
-  backdrop-filter: blur(10px);
-  border-radius: 20px;
+  background: rgba(255, 255, 255, 0.82);
+  backdrop-filter: blur(18px);
+  border-radius: 28px;
   padding: 2rem;
-  flex: 1 1 250px;
-  max-width: 300px;
-  border: 1px solid rgba(255,255,255,0.5);
-  transition: var(--transition);
+  border: 1px solid rgba(255, 255, 255, 0.7);
+  box-shadow: 0 22px 55px rgba(0, 0, 0, 0.08);
+  transition:
+    transform 0.35s ease,
+    border-color 0.3s ease,
+    box-shadow 0.3s ease;
   position: relative;
   overflow: hidden;
 }
-/* Hover effect for skill cards */
+
 .skills-category:hover {
-  background: rgba(255, 255, 255, 0.8);
-  transform: translateY(-5px);
-  border-color: var(--primary);
+  transform: translateY(-10px);
+  border-color: rgba(0, 120, 212, 0.35);
+  box-shadow: 0 30px 70px rgba(0, 0, 0, 0.14);
 }
-/* Neon line on top */
+
 .skills-category::before {
-  content: '';
+  content: "";
   position: absolute;
   top: 0;
   left: 0;
   width: 100%;
-  height: 4px;
+  height: 5px;
   background: linear-gradient(90deg, var(--primary), var(--accent));
-  opacity: 0;
-  transition: opacity 0.3s;
 }
-.skills-category:hover::before { opacity: 1; }
 
 body.dark .skills-category {
-  background: rgba(30, 41, 59, 0.6);
-  border-color: rgba(255, 255, 255, 0.1);
+  background: rgba(15, 23, 42, 0.8);
+  border-color: rgba(255, 255, 255, 0.12);
+  box-shadow: 0 22px 50px rgba(0, 0, 0, 0.35);
 }
+
 body.dark .skills-category:hover {
-  background: rgba(30, 41, 59, 0.9);
-  border-color: var(--accent);
+  background: rgba(15, 23, 42, 0.95);
+  border-color: rgba(0, 242, 255, 0.3);
 }
 
 .skills-category-title {
-  font-size: 1.2rem;
+  font-size: 1.3rem;
   color: var(--primary);
   margin-bottom: 1.5rem;
   display: flex;
   align-items: center;
-  gap: 10px;
+  gap: 14px;
+  font-weight: 800;
+}
+
+.skills-category-title i {
+  width: 38px;
+  height: 38px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 14px;
+  background: rgba(0, 120, 212, 0.12);
+  color: var(--primary);
+}
+
+.skills-category-title span {
+  display: inline-block;
+}
+
+.skills-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: grid;
+  gap: 0.9rem;
 }
 
 .skills-list li {
-  font-weight: 500;
-  padding: 0.5rem 0;
-  border-bottom: 1px solid rgba(0,0,0,0.05);
+  display: flex;
+  align-items: center;
+  gap: 0.85rem;
+  padding: 0.95rem 1rem;
+  border-radius: 18px;
+  background: rgba(255, 255, 255, 0.9);
+  color: #334155;
+  font-weight: 600;
+  border: 1px solid rgba(255, 255, 255, 0.7);
+  transition:
+    background 0.3s ease,
+    transform 0.3s ease,
+    border-color 0.3s ease;
 }
+
+.skills-list li:hover {
+  background: rgba(0, 120, 212, 0.1);
+  transform: translateX(4px);
+  border-color: rgba(0, 120, 212, 0.35);
+}
+
+.skills-list li i {
+  width: 32px;
+  height: 32px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 12px;
+  background: rgba(0, 120, 212, 0.12);
+  color: var(--primary);
+}
+
 body.dark .skills-list li {
-  border-bottom: 1px solid rgba(255,255,255,0.05);
-  color: #cbd5e1;
+  background: rgba(255, 255, 255, 0.06);
+  color: #e2e8f0;
+  border-color: rgba(255, 255, 255, 0.12);
+}
+
+body.dark .skills-list li:hover {
+  background: rgba(0, 242, 255, 0.12);
+}
+
+body.dark .skills-category-title {
+  color: #00f2ff;
+}
+
+body.dark .skills-category-title i {
+  background: rgba(0, 242, 255, 0.15);
+  color: var(--accent);
+}
+
+body.dark .skills-list li i {
+  background: rgba(0, 242, 255, 0.15);
+  color: var(--accent);
 }
 
 /* =========================================
    7. PROJECTS (IPHONE STYLE CARDS)
    ========================================= */
-#projects { padding: 4rem 2rem; }
+#projects {
+  padding: 4rem 2rem;
+}
 
 .projects-grid {
   display: grid;
@@ -484,7 +595,7 @@ body.dark .skills-list li {
   background: var(--card-bg-light);
   backdrop-filter: blur(10px);
   border-radius: 24px;
-  border: 1px solid rgba(255,255,255,0.5);
+  border: 1px solid rgba(255, 255, 255, 0.5);
   overflow: hidden;
   transition: all 0.4s ease;
   height: 100%;
@@ -503,7 +614,8 @@ body.dark .skills-list li {
   overflow: hidden;
   position: relative;
 }
-.project-thumb img, .project-thumb video {
+.project-thumb img,
+.project-thumb video {
   width: 100%;
   height: 100%;
   object-fit: cover;
@@ -530,7 +642,9 @@ body.dark .skills-list li {
   color: #64748b;
   margin-bottom: 1.5rem;
 }
-body.dark .project-bullets { color: #94a3b8; }
+body.dark .project-bullets {
+  color: #94a3b8;
+}
 
 .project-link {
   margin-top: auto;
@@ -544,10 +658,88 @@ body.dark .project-bullets { color: #94a3b8; }
   color: var(--accent);
 }
 
+/* =========================================
+   PROJECT EXPANDABLE DESCRIPTIONS
+   ========================================= */
+.project-short-desc {
+  transition: all 0.3s ease;
+}
+
+.project-full-desc {
+  transition: all 0.3s ease;
+  font-size: 0.95rem;
+  color: #64748b;
+  margin-top: 0.5rem;
+  line-height: 1.6;
+}
+
+body.dark .project-full-desc {
+  color: #94a3b8;
+}
+
+.project-full-desc.hidden {
+  display: none;
+  opacity: 0;
+  height: 0;
+  margin: 0;
+}
+
+.project-full-desc.show {
+  display: block;
+  opacity: 1;
+  height: auto;
+  animation: expandDesc 0.3s ease-out;
+}
+
+@keyframes expandDesc {
+  from {
+    opacity: 0;
+    transform: translateY(-10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Toggle Button Style */
+.project-toggle-btn {
+  background: transparent;
+  border: 2px solid var(--primary);
+  color: var(--primary);
+  padding: 0.7rem 1.2rem;
+  border-radius: 20px;
+  font-weight: 600;
+  font-size: 0.85rem;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.project-toggle-btn:hover {
+  background: var(--primary);
+  color: white;
+  transform: translateY(-2px);
+  box-shadow: 0 5px 15px rgba(0, 120, 212, 0.3);
+}
+
+body.dark .project-toggle-btn {
+  border-color: var(--accent);
+  color: var(--accent);
+}
+
+body.dark .project-toggle-btn:hover {
+  background: var(--accent);
+  color: #0f172a;
+  box-shadow: 0 5px 15px rgba(0, 242, 255, 0.3);
+}
+
 /* Dark Mode Projects */
 body.dark .premium-project {
   background: rgba(30, 41, 59, 0.5);
-  border-color: rgba(255,255,255,0.1);
+  border-color: rgba(255, 255, 255, 0.1);
 }
 
 /* =========================================
@@ -557,32 +749,36 @@ body.dark .premium-project {
   border-radius: 16px;
   overflow: hidden;
   position: relative;
-  box-shadow: 0 4px 20px rgba(0,0,0,0.1);
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
   transition: var(--transition);
   aspect-ratio: 4/3;
 }
 .certificate-card:hover {
   transform: scale(1.05) rotate(1deg); /* Funky interaction */
   z-index: 2;
-  box-shadow: 0 20px 50px rgba(0,0,0,0.3);
+  box-shadow: 0 20px 50px rgba(0, 0, 0, 0.3);
 }
 
 /* Contact Inputs */
-.form-group input, .form-group textarea {
-  background: rgba(255,255,255,0.5);
+.form-group input,
+.form-group textarea {
+  background: rgba(255, 255, 255, 0.5);
   border: 2px solid transparent;
   transition: 0.3s;
 }
-.form-group input:focus, .form-group textarea:focus {
+.form-group input:focus,
+.form-group textarea:focus {
   background: #fff;
   border-color: var(--primary);
   box-shadow: 0 0 15px rgba(0, 120, 212, 0.2);
 }
-body.dark .form-group input, body.dark .form-group textarea {
+body.dark .form-group input,
+body.dark .form-group textarea {
   background: rgba(15, 23, 42, 0.8);
   color: #fff;
 }
-body.dark .form-group input:focus, body.dark .form-group textarea:focus {
+body.dark .form-group input:focus,
+body.dark .form-group textarea:focus {
   border-color: var(--accent);
 }
 
@@ -595,7 +791,6 @@ footer {
 }
 
 @media (max-width: 900px) {
-  
   /* 1. Stop the Header from floating on mobile. Let it sit normally. */
   header {
     position: relative; /* Was 'fixed' */
@@ -611,7 +806,7 @@ footer {
     align-items: center;
     width: 100%;
     /* Keep formatting strict */
-    white-space: normal; 
+    white-space: normal;
     flex-wrap: wrap;
   }
 
@@ -630,7 +825,7 @@ footer {
     padding: 0;
     margin-bottom: 0.5rem;
   }
-  
+
   .navbar-left .profile-pic {
     width: 60px; /* Slightly larger on mobile for impact */
     height: 60px;
@@ -646,7 +841,7 @@ footer {
   /* 3. FIX THE HERO OVERLAP */
   /* Since header isn't fixed anymore, we don't need huge padding */
   .premium-hero {
-    padding-top: 3rem;  /* Reduced from 10rem */
+    padding-top: 3rem; /* Reduced from 10rem */
     padding-bottom: 3rem;
   }
 
@@ -659,260 +854,270 @@ footer {
     width: 130px;
     height: 130px;
   }
-  
+
   .premium-hero h1 {
     font-size: 2.2rem; /* Fix huge text breaking lines */
   }
 }
 @media (max-width: 600px) {
-  .premium-hero h1 { font-size: 2.5rem; }
-  .card { padding: 2rem 1.5rem; }
-  .premium-navbar { width: 90%; }
+  .premium-hero h1 {
+    font-size: 2.5rem;
+  }
+  .card {
+    padding: 2rem 1.5rem;
+  }
+  .premium-navbar {
+    width: 90%;
+  }
 }
 .nav-links {
   list-style: none;
   display: flex;
-  gap: 1.5rem;             /* Reduced from 2rem to save space */
+  gap: 1.5rem; /* Reduced from 2rem to save space */
 }
 
 /* =========================================
    NEW CERTIFICATES SECTION STYLES
    ========================================= */
 #certificates {
-    padding: 4rem 2rem;
-    position: relative;
+  padding: 4rem 2rem;
+  position: relative;
 }
 
 /* The Grid Container */
 .cert-showcase {
-    display: grid;
-    /* Creates a responsive grid: 3 columns on big screens, 2 on tablets, 1 on mobile */
-    grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
-    gap: 2.5rem;
-    max-width: 1200px;
-    margin: 0 auto;
+  display: grid;
+  /* Creates a responsive grid: 3 columns on big screens, 2 on tablets, 1 on mobile */
+  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+  gap: 2.5rem;
+  max-width: 1200px;
+  margin: 0 auto;
 }
 
 /* The Certificate Card - Glassmorphism Style */
 .cert-card {
-    background: var(--card-bg-light);
-    backdrop-filter: blur(var(--glass-blur));
-    -webkit-backdrop-filter: blur(var(--glass-blur));
-    border: 1px solid var(--glass-border);
-    border-radius: 20px;
-    overflow: hidden;
-    transition: all 0.3s ease;
-    display: flex;
-    flex-direction: column;
-    position: relative;
+  background: var(--card-bg-light);
+  backdrop-filter: blur(var(--glass-blur));
+  -webkit-backdrop-filter: blur(var(--glass-blur));
+  border: 1px solid var(--glass-border);
+  border-radius: 20px;
+  overflow: hidden;
+  transition: all 0.3s ease;
+  display: flex;
+  flex-direction: column;
+  position: relative;
 }
 
 /* Hover Effect: Lift and Neon Glow */
 .cert-card:hover {
-    transform: translateY(-10px);
-    box-shadow: 0 15px 30px rgba(0, 120, 212, 0.2), 0 0 15px var(--accent);
-    border-color: var(--primary);
+  transform: translateY(-10px);
+  box-shadow:
+    0 15px 30px rgba(0, 120, 212, 0.2),
+    0 0 15px var(--accent);
+  border-color: var(--primary);
 }
 
 /* The Image Frame */
 .cert-frame {
-    height: 180px;
-    overflow: hidden;
-    border-bottom: 1px solid var(--glass-border);
-    position: relative;
+  height: 180px;
+  overflow: hidden;
+  border-bottom: 1px solid var(--glass-border);
+  position: relative;
 }
 
 /* The Image itself */
 .cert-frame img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover; /* Ensures the image fills the frame without distortion */
-    transition: transform 0.5s ease;
+  width: 100%;
+  height: 100%;
+  object-fit: cover; /* Ensures the image fills the frame without distortion */
+  transition: transform 0.5s ease;
 }
 
 /* Subtle Zoom on Hover */
 .cert-card:hover .cert-frame img {
-    transform: scale(1.1);
+  transform: scale(1.1);
 }
 
 /* Card Body (Title, Issuer, Button) */
 .cert-body {
-    padding: 1.5rem;
-    flex-grow: 1;
-    display: flex;
-    flex-direction: column;
+  padding: 1.5rem;
+  flex-grow: 1;
+  display: flex;
+  flex-direction: column;
 }
 
 .cert-title {
-    font-size: 1.2rem;
-    font-weight: 700;
-    margin-bottom: 0.5rem;
-    color: #1e293b;
+  font-size: 1.2rem;
+  font-weight: 700;
+  margin-bottom: 0.5rem;
+  color: #1e293b;
 }
 
 .cert-issuer {
-    font-size: 0.9rem;
-    color: #64748b;
-    margin-bottom: 1.5rem;
-    font-weight: 500;
+  font-size: 0.9rem;
+  color: #64748b;
+  margin-bottom: 1.5rem;
+  font-weight: 500;
 }
 
 /* Styled View Button */
 .view-cert-btn-styled {
-    margin-top: auto; /* Pushes button to the bottom */
-    background: transparent;
-    border: 2px solid var(--primary);
-    color: var(--primary);
-    padding: 0.8rem 1.5rem;
-    border-radius: 50px;
-    font-weight: 700;
-    font-size: 0.9rem;
-    cursor: pointer;
-    transition: all 0.3s ease;
-    display: inline-flex;
-    align-items: center;
-    justify-content: center;
-    gap: 0.8rem;
-    text-decoration: none; /* In case you use <a> tag */
+  margin-top: auto; /* Pushes button to the bottom */
+  background: transparent;
+  border: 2px solid var(--primary);
+  color: var(--primary);
+  padding: 0.8rem 1.5rem;
+  border-radius: 50px;
+  font-weight: 700;
+  font-size: 0.9rem;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.8rem;
+  text-decoration: none; /* In case you use <a> tag */
 }
 
 .view-cert-btn-styled:hover {
-    background: var(--primary);
-    color: white;
-    box-shadow: 0 5px 15px rgba(0, 120, 212, 0.4);
-    transform: translateY(-2px);
+  background: var(--primary);
+  color: white;
+  box-shadow: 0 5px 15px rgba(0, 120, 212, 0.4);
+  transform: translateY(-2px);
 }
 
 /* =========================================
    DARK MODE ADJUSTMENTS
    ========================================= */
 body.dark .cert-card {
-    background: var(--card-bg-dark);
-    border-color: rgba(255, 255, 255, 0.1);
+  background: var(--card-bg-dark);
+  border-color: rgba(255, 255, 255, 0.1);
 }
 
 body.dark .cert-card:hover {
-    box-shadow: 0 15px 30px rgba(0, 0, 0, 0.5), 0 0 15px var(--accent);
-    border-color: var(--accent);
+  box-shadow:
+    0 15px 30px rgba(0, 0, 0, 0.5),
+    0 0 15px var(--accent);
+  border-color: var(--accent);
 }
 
 body.dark .cert-frame {
-    border-bottom-color: rgba(255, 255, 255, 0.1);
+  border-bottom-color: rgba(255, 255, 255, 0.1);
 }
 
 body.dark .cert-title {
-    color: #f1f5f9;
+  color: #f1f5f9;
 }
 
 body.dark .cert-issuer {
-    color: #94a3b8;
+  color: #94a3b8;
 }
 
 body.dark .view-cert-btn-styled {
-    border-color: var(--accent);
-    color: var(--accent);
+  border-color: var(--accent);
+  color: var(--accent);
 }
 
 body.dark .view-cert-btn-styled:hover {
-    background: var(--accent);
-    color: #0f172a; /* Dark text on bright button */
-    box-shadow: 0 5px 15px rgba(0, 242, 255, 0.4);
+  background: var(--accent);
+  color: #0f172a; /* Dark text on bright button */
+  box-shadow: 0 5px 15px rgba(0, 242, 255, 0.4);
 }
 
 /* =========================================
    RESPONSIVE TWEAKS
    ========================================= */
 @media (max-width: 600px) {
-    .cert-showcase {
-        grid-template-columns: 1fr; /* Single column on mobile */
-        gap: 2rem;
-    }
-    .cert-card {
-        max-width: 400px; /* Prevents them from getting too wide */
-        margin: 0 auto;
-    }
-    .cert-frame {
-        height: 200px; /* Slightly taller on mobile for better visibility */
-    }
+  .cert-showcase {
+    grid-template-columns: 1fr; /* Single column on mobile */
+    gap: 2rem;
+  }
+  .cert-card {
+    max-width: 400px; /* Prevents them from getting too wide */
+    margin: 0 auto;
+  }
+  .cert-frame {
+    height: 200px; /* Slightly taller on mobile for better visibility */
+  }
 }
 
 /* =========================================
    FULL SCREEN MODAL (FIXED & RESPONSIVE)
    ========================================= */
 .cert-modal {
-    display: none; /* Hidden by default */
-    position: fixed; /* Stay in place */
-    z-index: 10000; /* Sit on top of EVERYTHING */
-    left: 0;
-    top: 0;
-    width: 100%;
-    height: 100%;
-    overflow: hidden; /* No scrolling inside the background */
-    background-color: rgba(15, 23, 42, 0.9); /* Dark Navy Overlay */
-    backdrop-filter: blur(8px); /* Modern Glass Blur */
-    -webkit-backdrop-filter: blur(8px);
-    
-    /* Flexbox centering magic */
-    justify-content: center;
-    align-items: center;
-    opacity: 0;
-    transition: opacity 0.3s ease;
+  display: none; /* Hidden by default */
+  position: fixed; /* Stay in place */
+  z-index: 10000; /* Sit on top of EVERYTHING */
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  overflow: hidden; /* No scrolling inside the background */
+  background-color: rgba(15, 23, 42, 0.9); /* Dark Navy Overlay */
+  backdrop-filter: blur(8px); /* Modern Glass Blur */
+  -webkit-backdrop-filter: blur(8px);
+
+  /* Flexbox centering magic */
+  justify-content: center;
+  align-items: center;
+  opacity: 0;
+  transition: opacity 0.3s ease;
 }
 
 /* State when open */
 .cert-modal.open {
-    display: flex;
-    opacity: 1;
+  display: flex;
+  opacity: 1;
 }
 
 /* The Image Itself */
 .cert-modal-content {
-    margin: auto;
-    display: block;
-    max-width: 90%;
-    max-height: 90vh; /* Never taller than screen */
-    border-radius: 12px;
-    box-shadow: 0 0 40px rgba(0, 120, 212, 0.6); /* Blue Neon Glow */
-    border: 2px solid rgba(255, 255, 255, 0.2);
-    object-fit: contain; /* Keep aspect ratio */
-    transform: scale(0.8);
-    transition: transform 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+  margin: auto;
+  display: block;
+  max-width: 90%;
+  max-height: 90vh; /* Never taller than screen */
+  border-radius: 12px;
+  box-shadow: 0 0 40px rgba(0, 120, 212, 0.6); /* Blue Neon Glow */
+  border: 2px solid rgba(255, 255, 255, 0.2);
+  object-fit: contain; /* Keep aspect ratio */
+  transform: scale(0.8);
+  transition: transform 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
 }
 
 .cert-modal.open .cert-modal-content {
-    transform: scale(1); /* Pop animation */
+  transform: scale(1); /* Pop animation */
 }
 
 /* Close Button (X) */
 .cert-modal-close {
-    position: absolute;
-    top: 20px;
-    right: 30px;
-    color: #f1f5f9;
-    font-size: 45px;
-    font-weight: bold;
-    cursor: pointer;
-    transition: all 0.3s ease;
-    z-index: 10001;
-    line-height: 1;
+  position: absolute;
+  top: 20px;
+  right: 30px;
+  color: #f1f5f9;
+  font-size: 45px;
+  font-weight: bold;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  z-index: 10001;
+  line-height: 1;
 }
 
 .cert-modal-close:hover {
-    color: var(--primary);
-    transform: rotate(90deg); /* Spin effect on hover */
-    text-shadow: 0 0 15px var(--primary);
+  color: var(--primary);
+  transform: rotate(90deg); /* Spin effect on hover */
+  text-shadow: 0 0 15px var(--primary);
 }
 
 /* Mobile Tweak */
 @media (max-width: 600px) {
-    .cert-modal-close {
-        top: 15px;
-        right: 20px;
-        font-size: 35px;
-    }
-    .cert-modal-content {
-        width: 95%; /* Use more width on mobile */
-    }
+  .cert-modal-close {
+    top: 15px;
+    right: 20px;
+    font-size: 35px;
+  }
+  .cert-modal-content {
+    width: 95%; /* Use more width on mobile */
+  }
 }
 /* =========================================
    MOBILE FIX: STICKY HEADER
@@ -921,7 +1126,6 @@ body.dark .view-cert-btn-styled:hover {
    MOBILE FIX: HIDE NAV IMAGE & ADJUST SPACING
    ========================================= */
 @media (max-width: 900px) {
-  
   /* 1. Keep the Header Fixed */
   header {
     position: fixed;
@@ -944,7 +1148,7 @@ body.dark .view-cert-btn-styled:hover {
 
   /* 2. HIDE THE PROFILE PIC IN NAVBAR ON MOBILE */
   .navbar-left .profile-pic {
-    display: none; 
+    display: none;
   }
 
   /* Center the logo text since image is gone */
@@ -954,7 +1158,7 @@ body.dark .view-cert-btn-styled:hover {
     padding-right: 0; /* Remove the padding we added for the toggle button */
     margin-bottom: 0;
   }
-  
+
   /* 3. Adjust Toggle Button Position */
   #theme-toggle {
     position: absolute;
@@ -966,7 +1170,7 @@ body.dark .view-cert-btn-styled:hover {
   /* 4. REDUCE HERO PADDING (Crucial step to stop "intercepting") */
   /* Since the header is shorter now (no image), we don't need 13rem padding */
   .premium-hero {
-    padding-top: 10rem;  /* Reduced from 13rem to pull content up */
+    padding-top: 10rem; /* Reduced from 13rem to pull content up */
     padding-bottom: 3rem;
   }
 
@@ -976,7 +1180,7 @@ body.dark .view-cert-btn-styled:hover {
     gap: 0.8rem;
     width: 100%;
   }
-  
+
   /* ... rest of mobile styles ... */
 }
 
@@ -984,182 +1188,203 @@ body.dark .view-cert-btn-styled:hover {
    MODERN CONTACT FORM STYLES
    ========================================= */
 .contact-form-card {
-    max-width: 600px;
-    text-align: center;
+  max-width: 600px;
+  text-align: center;
 }
 
 .contact-header p {
-    color: #64748b;
-    margin-bottom: 2.5rem;
-    font-size: 1.1rem;
+  color: #64748b;
+  margin-bottom: 2.5rem;
+  font-size: 1.1rem;
 }
 
 /* Input Groups */
 .form-group {
-    margin-bottom: 1.5rem;
-    text-align: left;
+  margin-bottom: 1.5rem;
+  text-align: left;
 }
 
 .form-group label {
-    display: block;
-    margin-bottom: 0.5rem;
-    font-weight: 600;
-    color: #334155;
-    font-size: 0.95rem;
+  display: block;
+  margin-bottom: 0.5rem;
+  font-weight: 600;
+  color: #334155;
+  font-size: 0.95rem;
 }
 
 /* Input Wrapper for Icons */
 .input-wrapper {
-    position: relative;
-    display: flex;
-    align-items: center;
+  position: relative;
+  display: flex;
+  align-items: center;
 }
 
 .input-icon {
-    position: absolute;
-    left: 1.2rem;
-    color: #94a3b8;
-    pointer-events: none;
-    transition: color 0.3s ease;
+  position: absolute;
+  left: 1.2rem;
+  color: #94a3b8;
+  pointer-events: none;
+  transition: color 0.3s ease;
 }
 .textarea-icon {
-    top: 1.2rem;
+  top: 1.2rem;
 }
 
 /* The Inputs Themselves */
-.form-group input, 
+.form-group input,
 .form-group textarea {
-    width: 100%;
-    padding: 1rem 1rem 1rem 3rem; /* Space for icon */
-    background: rgba(255, 255, 255, 0.5);
-    border: 2px solid rgba(255, 255, 255, 0.5);
-    border-radius: 12px;
-    font-size: 1rem;
-    font-family: inherit;
-    color: #1e293b;
-    transition: all 0.3s ease;
-    box-shadow: inset 0 2px 4px rgba(0,0,0,0.02);
+  width: 100%;
+  padding: 1rem 1rem 1rem 3rem; /* Space for icon */
+  background: rgba(255, 255, 255, 0.5);
+  border: 2px solid rgba(255, 255, 255, 0.5);
+  border-radius: 12px;
+  font-size: 1rem;
+  font-family: inherit;
+  color: #1e293b;
+  transition: all 0.3s ease;
+  box-shadow: inset 0 2px 4px rgba(0, 0, 0, 0.02);
 }
 
-.form-group input:focus, 
+.form-group input:focus,
 .form-group textarea:focus {
-    outline: none;
-    background: #fff;
-    border-color: var(--primary);
-    box-shadow: 0 0 0 4px rgba(0, 120, 212, 0.1);
+  outline: none;
+  background: #fff;
+  border-color: var(--primary);
+  box-shadow: 0 0 0 4px rgba(0, 120, 212, 0.1);
 }
 
- .form-group input:focus + .input-icon,
-.form-group textarea:focus + .input-icon { /* Note: This selector requires icon after input in HTML or JS handling, simplified here for CSS-only approach, usually we color icon on focus-within on wrapper */ }
+.form-group input:focus + .input-icon,
+.form-group textarea:focus + .input-icon {
+  /* Note: This selector requires icon after input in HTML or JS handling, simplified here for CSS-only approach, usually we color icon on focus-within on wrapper */
+}
 
 /* Use Focus-Within to color the icon */
 .input-wrapper:focus-within .input-icon {
-    color: var(--primary);
+  color: var(--primary);
 }
 
 /* Submit Button */
 .submit-btn {
-    width: 100%;
-    justify-content: center;
-    gap: 10px;
-    margin-top: 1rem;
-    cursor: pointer;
+  width: 100%;
+  justify-content: center;
+  gap: 10px;
+  margin-top: 1rem;
+  cursor: pointer;
 }
 
 /* =========================================
    SUCCESS MESSAGE (HIDDEN BY DEFAULT)
    ========================================= */
 .hidden {
-    display: none !important; /* Force hide */
+  display: none !important; /* Force hide */
 }
 
 .form-success {
-    margin-top: 2rem;
-    background: rgba(220, 252, 231, 0.8); /* Light Green Glass */
-    border: 1px solid #86efac;
-    color: #166534;
-    padding: 1.5rem;
-    border-radius: 16px;
-    display: flex; /* Flex is applied when .hidden is removed */
-    align-items: center;
-    gap: 1rem;
-    text-align: left;
-    backdrop-filter: blur(5px);
-    animation: slideUp 0.5s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+  margin-top: 2rem;
+  background: rgba(220, 252, 231, 0.8); /* Light Green Glass */
+  border: 1px solid #86efac;
+  color: #166534;
+  padding: 1.5rem;
+  border-radius: 16px;
+  display: flex; /* Flex is applied when .hidden is removed */
+  align-items: center;
+  gap: 1rem;
+  text-align: left;
+  backdrop-filter: blur(5px);
+  animation: slideUp 0.5s cubic-bezier(0.175, 0.885, 0.32, 1.275);
 }
 
 .success-icon {
-    font-size: 2rem;
-    color: #16a34a;
+  font-size: 2rem;
+  color: #16a34a;
 }
 
 @keyframes slideUp {
-    from { opacity: 0; transform: translateY(20px); }
-    to { opacity: 1; transform: translateY(0); }
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
 }
 
 /* =========================================
    SOCIAL LINKS ROW
    ========================================= */
 .social-links-row {
-    margin-top: 3rem;
-    display: flex;
-    justify-content: center;
-    gap: 1.5rem;
+  margin-top: 3rem;
+  display: flex;
+  justify-content: center;
+  gap: 1.5rem;
 }
 
 .social-btn {
-    width: 50px;
-    height: 50px;
-    border-radius: 50%;
-    background: rgba(255, 255, 255, 0.6);
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    font-size: 1.3rem;
-    color: #64748b;
-    border: 1px solid rgba(255, 255, 255, 0.5);
-    transition: all 0.3s ease;
-    box-shadow: 0 4px 10px rgba(0,0,0,0.05);
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.6);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.3rem;
+  color: #64748b;
+  border: 1px solid rgba(255, 255, 255, 0.5);
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
 }
 
 .social-btn:hover {
-    transform: translateY(-5px);
-    color: white;
+  transform: translateY(-5px);
+  color: white;
 }
 
-.social-btn.github:hover { background: #333; border-color: #333; }
-.social-btn.linkedin:hover { background: #0077b5; border-color: #0077b5; }
-.social-btn.email:hover { background: #ea4335; border-color: #ea4335; }
+.social-btn.github:hover {
+  background: #333;
+  border-color: #333;
+}
+.social-btn.linkedin:hover {
+  background: #0077b5;
+  border-color: #0077b5;
+}
+.social-btn.email:hover {
+  background: #ea4335;
+  border-color: #ea4335;
+}
 
 /* =========================================
    DARK MODE ADJUSTMENTS
    ========================================= */
-body.dark .contact-header p { color: #94a3b8; }
-body.dark .form-group label { color: #cbd5e1; }
-
-body.dark .form-group input, 
-body.dark .form-group textarea {
-    background: rgba(15, 23, 42, 0.6);
-    border-color: rgba(255, 255, 255, 0.1);
-    color: #fff;
+body.dark .contact-header p {
+  color: #94a3b8;
+}
+body.dark .form-group label {
+  color: #cbd5e1;
 }
 
-body.dark .form-group input:focus, 
+body.dark .form-group input,
+body.dark .form-group textarea {
+  background: rgba(15, 23, 42, 0.6);
+  border-color: rgba(255, 255, 255, 0.1);
+  color: #fff;
+}
+
+body.dark .form-group input:focus,
 body.dark .form-group textarea:focus {
-    background: rgba(15, 23, 42, 0.9);
-    border-color: var(--accent);
-    box-shadow: 0 0 0 4px rgba(0, 242, 255, 0.1);
+  background: rgba(15, 23, 42, 0.9);
+  border-color: var(--accent);
+  box-shadow: 0 0 0 4px rgba(0, 242, 255, 0.1);
 }
 
 body.dark .input-wrapper:focus-within .input-icon {
-    color: var(--accent);
+  color: var(--accent);
 }
 
 body.dark .social-btn {
-    background: rgba(30, 41, 59, 0.6);
-    border-color: rgba(255, 255, 255, 0.1);
-    color: #cbd5e1;
+  background: rgba(30, 41, 59, 0.6);
+  border-color: rgba(255, 255, 255, 0.1);
+  color: #cbd5e1;
 }
 
 /* Style for the button container to make them sit side-by-side */
@@ -1168,47 +1393,47 @@ body.dark .social-btn {
 /* 1. Default Style (Light Mode) */
 /* We make it BLUE by default so it shows up on white backgrounds */
 .secondary-btn {
-    display: inline-flex;
-    align-items: center;
-    gap: 8px;
-    background: transparent;
-    
-    /* use your main blue color variable */
-    border: 2px solid var(--primary); 
-    color: var(--primary); 
-    
-    padding: 12px 24px;
-    border-radius: 50px;
-    font-weight: 600;
-    text-decoration: none;
-    transition: all 0.3s ease;
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  background: transparent;
+
+  /* use your main blue color variable */
+  border: 2px solid var(--primary);
+  color: var(--primary);
+
+  padding: 12px 24px;
+  border-radius: 50px;
+  font-weight: 600;
+  text-decoration: none;
+  transition: all 0.3s ease;
 }
 
 /* Hover Effect (Light Mode) */
 .secondary-btn:hover {
-    background: var(--primary);
-    color: #ffffff;
-    transform: translateY(-3px);
-    box-shadow: 0 5px 15px rgba(0, 120, 212, 0.3);
+  background: var(--primary);
+  color: #ffffff;
+  transform: translateY(-3px);
+  box-shadow: 0 5px 15px rgba(0, 120, 212, 0.3);
 }
 
 /* 2. Dark Mode Override */
 /* When the website is in dark mode, turn the button WHITE */
 body.dark-mode .secondary-btn {
-    border-color: #ffffff;
-    color: #ffffff;
+  border-color: #ffffff;
+  color: #ffffff;
 }
 
 /* Hover Effect (Dark Mode) */
 body.dark-mode .secondary-btn:hover {
-    background: #ffffff;
-    color: #0f172a; /* Dark text */
-    box-shadow: 0 5px 15px rgba(255, 255, 255, 0.2);
+  background: #ffffff;
+  color: #0f172a; /* Dark text */
+  box-shadow: 0 5px 15px rgba(255, 255, 255, 0.2);
 }
 
 /* Keep the CTA alignment perfect */
 .cta-btn {
-    display: inline-flex;
-    align-items: center;
-    gap: 8px;
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
 }

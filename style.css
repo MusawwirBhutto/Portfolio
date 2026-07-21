@@ -961,6 +961,13 @@ footer {
 }
 
 /* Styled View Button */
+.cert-bio {
+  font-size: 0.92rem;
+  color: #64748b;
+  margin-bottom: 1rem;
+  line-height: 1.6;
+}
+
 .view-cert-btn-styled {
   margin-top: auto; /* Pushes button to the bottom */
   background: transparent;
@@ -1010,6 +1017,10 @@ body.dark .cert-title {
 }
 
 body.dark .cert-issuer {
+  color: #94a3b8;
+}
+
+body.dark .cert-bio {
   color: #94a3b8;
 }
 

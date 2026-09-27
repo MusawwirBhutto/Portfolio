@@ -117,7 +117,7 @@ export default function Home() {
                   className="w-32 h-32 md:w-36 md:h-36 rounded-3xl border border-blue-500/30 overflow-hidden relative shadow-2xl bg-neutral-900/60 backdrop-blur-xl group cursor-pointer transition-shadow hover:shadow-[0_15px_35px_-10px_rgba(59,130,246,0.3)] flex-shrink-0"
                 >
                   <Image
-                    src="/musawwir-portrait.jpg"
+                    src="/Portfolio/musawwir-portrait.jpg"
                     alt="Musawwir Bhutto"
                     fill
                     priority
@@ -206,7 +206,7 @@ export default function Home() {
 
               {/* Download Resume Button */}
               <motion.a
-                href="/Musawwir_Bhutto_Resume.pdf"
+                href="/Portfolio/Musawwir_Bhutto_Resume.pdf"
                 download
                 whileHover={{ scale: 1.03 }}
                 whileTap={{ scale: 0.98 }}

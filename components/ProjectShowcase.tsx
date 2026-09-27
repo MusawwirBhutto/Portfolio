@@ -24,7 +24,7 @@ const VIP_PROJECTS: VIPProject[] = [
     tagline: "AI Appointment Platform",
     description:
       "AI-assisted salon appointment booking platform featuring conversational search and automated scheduling.",
-    image: "/projects/groomin-vip.png",
+    image: "/Portfolio/projects/groomin-vip.png",
     accent: "#3B82F6",
     badgeIcon: Sparkles,
   },
@@ -35,7 +35,7 @@ const VIP_PROJECTS: VIPProject[] = [
     tagline: "Spatial 3D Food AR & SaaS",
     description:
       "Restaurant SaaS providing digital QR code menus, augmented reality 3D food previews, and integrated ordering systems.",
-    image: "/projects/dinelens-vip.png",
+    image: "/Portfolio/projects/dinelens-vip.png",
     accent: "#0EA5E9",
     badgeIcon: Box,
   },
@@ -46,7 +46,7 @@ const VIP_PROJECTS: VIPProject[] = [
     tagline: "Geo-Ad & Fleet Telemetry",
     description:
       "Location-based mobile advertising application connecting advertisers with drivers to display physical ad banners within specific geographical radiuses.",
-    image: "/projects/trackshaw-vip.png",
+    image: "/Portfolio/projects/trackshaw-vip.png",
     accent: "#10B981",
     badgeIcon: Navigation,
   },

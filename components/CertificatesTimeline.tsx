@@ -19,7 +19,7 @@ const CERTIFICATES: CertificateItem[] = [
     title: "Version Control with Git",
     issuer: "Meta • Coursera",
     credentialDate: "Verified Credential",
-    image: "/certificates/git.png",
+    image: "/Portfolio/certificates/git.png",
     badge: "Engineering Core",
   },
   {
@@ -27,7 +27,7 @@ const CERTIFICATES: CertificateItem[] = [
     title: "Google AI Essentials",
     issuer: "Google Career Certificates",
     credentialDate: "AI & ML Foundations",
-    image: "/certificates/google-ai.png",
+    image: "/Portfolio/certificates/google-ai.png",
     badge: "GenAI Specialist",
   },
   {
@@ -35,7 +35,7 @@ const CERTIFICATES: CertificateItem[] = [
     title: "UX Design Specialization",
     issuer: "Google • Coursera",
     credentialDate: "User Centered Architecture",
-    image: "/certificates/ux-design.png",
+    image: "/Portfolio/certificates/ux-design.png",
     badge: "Product & UI/UX",
   },
   {
@@ -43,7 +43,7 @@ const CERTIFICATES: CertificateItem[] = [
     title: "Hackathon Winner (CodeStorm '26)",
     issuer: "National Tech Hackathon",
     credentialDate: "1st Place Mobile Innovation",
-    image: "/certificates/codestorm.png",
+    image: "/Portfolio/certificates/codestorm.png",
     badge: "Champion",
   },
   {
@@ -51,7 +51,7 @@ const CERTIFICATES: CertificateItem[] = [
     title: "Young Entrepreneur Award",
     issuer: "Innovation & Startup Summit",
     credentialDate: "Venture Excellence",
-    image: "/certificates/entrepreneur.png",
+    image: "/Portfolio/certificates/entrepreneur.png",
     badge: "Leadership",
   },
   {
@@ -59,7 +59,7 @@ const CERTIFICATES: CertificateItem[] = [
     title: "Techpreneur Summit Delegate",
     issuer: "Global Technology Forum",
     credentialDate: "Mobile Architecture Speaker",
-    image: "/certificates/techpreneur.png",
+    image: "/Portfolio/certificates/techpreneur.png",
     badge: "Delegate",
   },
   {
@@ -67,7 +67,7 @@ const CERTIFICATES: CertificateItem[] = [
     title: "GenAI Data Analytics",
     issuer: "Tata Group • Forage",
     credentialDate: "Enterprise Intelligence",
-    image: "/certificates/genai-analytics.png",
+    image: "/Portfolio/certificates/genai-analytics.png",
     badge: "Data & AI",
   },
 ];

@@ -2,6 +2,7 @@
 
 import Image from "next/image";
 import { ExternalLink, Code2, Terminal } from "lucide-react";
+import { getAssetPath } from "@/utils/assetPath";
 
 interface PersonalProject {
   id: string;
@@ -19,7 +20,7 @@ const PERSONAL_PROJECTS: PersonalProject[] = [
     tag: "E-Commerce",
     description:
       "Shopping UI with cart, login, and persistent SharedPreferences.",
-    image: "/Portfolio/projects/catalog-app.png",
+    image: getAssetPath("/projects/catalog-app.png"),
     githubUrl: "https://github.com/MusawwirBhutto",
   },
   {
@@ -27,7 +28,7 @@ const PERSONAL_PROJECTS: PersonalProject[] = [
     title: "Push Away Game",
     tag: "Game Loop",
     description: "Interactive 2D physics game loop engineered in Flutter.",
-    image: "/Portfolio/projects/push-game.png",
+    image: getAssetPath("/projects/push-game.png"),
     githubUrl: "https://github.com/MusawwirBhutto",
   },
   {
@@ -36,7 +37,7 @@ const PERSONAL_PROJECTS: PersonalProject[] = [
     tag: "News Engine",
     description:
       "Authentic news reader with infinite scroll, debunking, and search.",
-    image: "/Portfolio/projects/sift-news.png",
+    image: getAssetPath("/projects/sift-news.png"),
     githubUrl: "https://github.com/MusawwirBhutto",
   },
   {
@@ -45,7 +46,7 @@ const PERSONAL_PROJECTS: PersonalProject[] = [
     tag: "Marketplace",
     description:
       "Full-stack clothing marketplace with Supabase authentication.",
-    image: "/Portfolio/projects/secondlife.png",
+    image: getAssetPath("/projects/secondlife.png"),
     githubUrl: "https://github.com/MusawwirBhutto",
   },
 ];

@@ -3,6 +3,7 @@
 import Image from "next/image";
 import { motion } from "framer-motion";
 import { Award, CheckCircle2, Sparkles } from "lucide-react";
+import { getAssetPath } from "@/utils/assetPath";
 
 interface CertificateItem {
   id: string;
@@ -19,7 +20,7 @@ const CERTIFICATES: CertificateItem[] = [
     title: "Version Control with Git",
     issuer: "Meta • Coursera",
     credentialDate: "Verified Credential",
-    image: "/Portfolio/certificates/git.png",
+    image: getAssetPath("/certificates/git.png"),
     badge: "Engineering Core",
   },
   {
@@ -27,7 +28,7 @@ const CERTIFICATES: CertificateItem[] = [
     title: "Google AI Essentials",
     issuer: "Google Career Certificates",
     credentialDate: "AI & ML Foundations",
-    image: "/Portfolio/certificates/google-ai.png",
+    image: getAssetPath("/certificates/google-ai.png"),
     badge: "GenAI Specialist",
   },
   {
@@ -35,7 +36,7 @@ const CERTIFICATES: CertificateItem[] = [
     title: "UX Design Specialization",
     issuer: "Google • Coursera",
     credentialDate: "User Centered Architecture",
-    image: "/Portfolio/certificates/ux-design.png",
+    image: getAssetPath("/certificates/ux-design.png"),
     badge: "Product & UI/UX",
   },
   {
@@ -43,7 +44,7 @@ const CERTIFICATES: CertificateItem[] = [
     title: "Hackathon Winner (CodeStorm '26)",
     issuer: "National Tech Hackathon",
     credentialDate: "1st Place Mobile Innovation",
-    image: "/Portfolio/certificates/codestorm.png",
+    image: getAssetPath("/certificates/codestorm.png"),
     badge: "Champion",
   },
   {
@@ -51,7 +52,7 @@ const CERTIFICATES: CertificateItem[] = [
     title: "Young Entrepreneur Award",
     issuer: "Innovation & Startup Summit",
     credentialDate: "Venture Excellence",
-    image: "/Portfolio/certificates/entrepreneur.png",
+    image: getAssetPath("/certificates/entrepreneur.png"),
     badge: "Leadership",
   },
   {
@@ -59,7 +60,7 @@ const CERTIFICATES: CertificateItem[] = [
     title: "Techpreneur Summit Delegate",
     issuer: "Global Technology Forum",
     credentialDate: "Mobile Architecture Speaker",
-    image: "/Portfolio/certificates/techpreneur.png",
+    image: getAssetPath("/certificates/techpreneur.png"),
     badge: "Delegate",
   },
   {
@@ -67,7 +68,7 @@ const CERTIFICATES: CertificateItem[] = [
     title: "GenAI Data Analytics",
     issuer: "Tata Group • Forage",
     credentialDate: "Enterprise Intelligence",
-    image: "/Portfolio/certificates/genai-analytics.png",
+    image: getAssetPath("/certificates/genai-analytics.png"),
     badge: "Data & AI",
   },
 ];

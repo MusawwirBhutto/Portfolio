@@ -107,55 +107,10 @@ export default function CertificatesTimeline() {
           {CERTIFICATES.map((cert, index) => {
             const isLeft = index % 2 === 0;
 
-            const cardContent = (
-              <motion.div
-                initial={{ opacity: 0, x: isLeft ? -50 : 50, y: 20 }}
-                whileInView={{ opacity: 1, x: 0, y: 0 }}
-                viewport={{ once: true, margin: "-30px" }}
-                transition={{ duration: 0.6, ease: "easeOut" }}
-                whileHover={{ y: -6, transition: { duration: 0.2 } }}
-                className="w-full bg-neutral-900/60 backdrop-blur-md border border-white/10 rounded-2xl p-5 shadow-xl hover:border-blue-500/30 hover:shadow-[0_0_30px_rgba(59,130,246,0.15)] transition-all group"
-              >
-                {/* Certificate Image Frame */}
-                <div className="aspect-video relative w-full rounded-xl overflow-hidden bg-black/60 border border-white/5 mb-4">
-                  <Image
-                    src={cert.image}
-                    alt={cert.title}
-                    fill
-                    sizes="(max-width: 768px) 100vw, 450px"
-                    className="object-contain p-2 transition-transform duration-500 group-hover:scale-105"
-                  />
-                  {/* Subtle Glass Sheen */}
-                  <div className="absolute inset-0 bg-gradient-to-tr from-transparent via-white/[0.04] to-transparent pointer-events-none" />
-                </div>
-
-                {/* Text Content */}
-                <div className="space-y-1">
-                  <div className="flex items-center justify-between gap-2">
-                    <h3 className="text-base sm:text-lg font-bold text-white tracking-tight truncate">
-                      {cert.title}
-                    </h3>
-                    <span className="text-[10px] font-mono px-2 py-0.5 rounded-full bg-blue-500/15 border border-blue-500/30 text-blue-300 flex-shrink-0">
-                      {cert.badge}
-                    </span>
-                  </div>
-
-                  <p className="text-xs sm:text-sm text-neutral-400 font-mono flex items-center gap-1.5 pt-0.5">
-                    <CheckCircle2 className="w-3.5 h-3.5 text-emerald-400 flex-shrink-0" />
-                    <span>{cert.issuer}</span>
-                    <span className="text-neutral-600">•</span>
-                    <span className="text-neutral-500">
-                      {cert.credentialDate}
-                    </span>
-                  </p>
-                </div>
-              </motion.div>
-            );
-
             return (
               <div
                 key={cert.id}
-                className="relative flex items-center justify-between w-full"
+                className="relative flex items-center w-full min-h-[120px] md:min-h-[180px]"
               >
                 {/* Central Glowing Node */}
                 <motion.div
@@ -166,27 +121,60 @@ export default function CertificatesTimeline() {
                   className="absolute left-4 md:left-1/2 -translate-x-1/2 w-4 h-4 rounded-full bg-black border-2 border-blue-500 shadow-[0_0_15px_rgba(59,130,246,0.8)] z-10"
                 />
 
-                {/* Desktop Left Card / Spacer */}
-                <div className="hidden md:block md:w-[45%]">
-                  {isLeft ? cardContent : null}
-                </div>
+                {/* Card */}
+                <motion.div
+                  initial={{ opacity: 0, x: isLeft ? -50 : 50, y: 20 }}
+                  whileInView={{ opacity: 1, x: 0, y: 0 }}
+                  viewport={{ once: true, margin: "-30px" }}
+                  transition={{ duration: 0.6, ease: "easeOut" }}
+                  whileHover={{ y: -6, transition: { duration: 0.2 } }}
+                  className={`w-[calc(100%-3rem)] ml-auto md:w-[45%] md:absolute ${
+                    isLeft
+                      ? "md:right-1/2 md:mr-8 md:ml-0"
+                      : "md:left-1/2 md:ml-8"
+                  } bg-neutral-900/60 backdrop-blur-md border border-white/10 rounded-2xl p-5 shadow-xl hover:border-blue-500/30 hover:shadow-[0_0_30px_rgba(59,130,246,0.15)] transition-all group`}
+                >
+                  {/* Certificate Image Frame */}
+                  <div className="aspect-video relative w-full rounded-xl overflow-hidden bg-black/60 border border-white/5 mb-4">
+                    <Image
+                      src={cert.image}
+                      alt={cert.title}
+                      fill
+                      sizes="(max-width: 768px) 100vw, 450px"
+                      className="object-contain p-2 transition-transform duration-500 group-hover:scale-105"
+                    />
+                    {/* Subtle Glass Sheen */}
+                    <div className="absolute inset-0 bg-gradient-to-tr from-transparent via-white/[0.04] to-transparent pointer-events-none" />
+                  </div>
 
-                {/* Desktop Right Card / Spacer */}
-                <div className="hidden md:block md:w-[45%]">
-                  {!isLeft ? cardContent : null}
-                </div>
+                  {/* Text Content */}
+                  <div className="space-y-1">
+                    <div className="flex items-center justify-between gap-2">
+                      <h3 className="text-base sm:text-lg font-bold text-white tracking-tight break-words whitespace-normal">
+                        {cert.title}
+                      </h3>
+                      <span className="text-[10px] font-mono px-2 py-0.5 rounded-full bg-blue-500/15 border border-blue-500/30 text-blue-300 flex-shrink-0">
+                        {cert.badge}
+                      </span>
+                    </div>
 
-                {/* Mobile Card */}
-                <div className="md:hidden w-[calc(100%-3rem)] ml-auto">
-                  {cardContent}
-                </div>
+                    <p className="text-xs sm:text-sm text-neutral-400 font-mono flex items-center gap-1.5 pt-0.5">
+                      <CheckCircle2 className="w-3.5 h-3.5 text-emerald-400 flex-shrink-0" />
+                      <span>{cert.issuer}</span>
+                      <span className="text-neutral-600">•</span>
+                      <span className="text-neutral-500">
+                        {cert.credentialDate}
+                      </span>
+                    </p>
+                  </div>
+                </motion.div>
               </div>
             );
           })}
         </div>
 
         {/* Footer Stamp */}
-        <div className="mt-20 text-center relative z-20">
+        <div className="mt-20 md:mt-48 text-center relative z-20">
           <div className="inline-flex items-center gap-2 px-4 py-2 rounded-2xl bg-neutral-900/80 border border-neutral-800 text-xs font-mono text-neutral-400 shadow-sm">
             <Sparkles className="w-3.5 h-3.5 text-blue-400" />
             <span>7 Industry & Hackathon Certifications Verified</span>

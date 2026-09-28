@@ -101,85 +101,103 @@ export default function SkillsDeck() {
   });
 
   // ── PHASE 1: Rise & Face Camera (0 -> 0.2) ──
-  const deckRotateX = useTransform(scrollYProgress, [0, 0.2], [60, 0]);
-  const deckY = useTransform(scrollYProgress, [0, 0.2], [180, 0]);
-  const deckScale = useTransform(scrollYProgress, [0, 0.2], [0.85, 1]);
+  const deckRotateX = useTransform(scrollYProgress, (v) => {
+    const isMob = typeof window !== "undefined" && window.innerWidth < 768;
+    if (isMob) return 0;
+    return v < 0.2 ? 60 - (v / 0.2) * 60 : 0;
+  });
+
+  const deckY = useTransform(scrollYProgress, (v) => {
+    const isMob = typeof window !== "undefined" && window.innerWidth < 768;
+    if (isMob) return 0;
+    return v < 0.2 ? 180 - (v / 0.2) * 180 : 0;
+  });
+
+  const deckScale = useTransform(scrollYProgress, (v) => {
+    const isMob = typeof window !== "undefined" && window.innerWidth < 768;
+    if (isMob) return 1;
+    return v < 0.2 ? 0.85 + (v / 0.2) * 0.15 : 1;
+  });
 
   // ── PHASE 2: The Fan Out with Responsive Math (0.25 -> 0.8) ──
-  // Card 1: Leftmost outer card (-160% X, 10% Y drop, -8deg tilt on desktop)
+  // Card 1: Leftmost outer card (-120% X, 10% Y drop, -8deg tilt on desktop)
   const card1X = useTransform(scrollYProgress, (v) => {
     if (v < 0.25) return "0%";
     const t = Math.min(1, Math.max(0, (v - 0.25) / 0.55));
     const isMob = typeof window !== "undefined" && window.innerWidth < 768;
-    return isMob ? "0%" : `${-160 * t}%`;
+    return isMob ? "0%" : `${-120 * t}%`;
   });
   const card1Y = useTransform(scrollYProgress, (v) => {
     if (v < 0.25) return "0%";
     const t = Math.min(1, Math.max(0, (v - 0.25) / 0.55));
     const isMob = typeof window !== "undefined" && window.innerWidth < 768;
-    return isMob ? `${-60 * t}px` : "0%";
+    return isMob ? "0px" : `${10 * t}%`;
   });
   const card1RotateZ = useTransform(scrollYProgress, (v) => {
     if (v < 0.25) return -2;
     const t = Math.min(1, Math.max(0, (v - 0.25) / 0.55));
-    return -2 + -5 * t;
+    const isMob = typeof window !== "undefined" && window.innerWidth < 768;
+    return isMob ? 0 : -2 + -5 * t;
   });
 
-  // Card 2: Inner left card (-55% X, 0% Y, -2deg tilt on desktop)
+  // Card 2: Inner left card (-45% X, 0% Y, -2deg tilt on desktop)
   const card2X = useTransform(scrollYProgress, (v) => {
     if (v < 0.25) return "0%";
     const t = Math.min(1, Math.max(0, (v - 0.25) / 0.55));
     const isMob = typeof window !== "undefined" && window.innerWidth < 768;
-    return isMob ? "0%" : `${-55 * t}%`;
+    return isMob ? "0%" : `${-45 * t}%`;
   });
   const card2Y = useTransform(scrollYProgress, (v) => {
     if (v < 0.25) return "0%";
     const t = Math.min(1, Math.max(0, (v - 0.25) / 0.55));
     const isMob = typeof window !== "undefined" && window.innerWidth < 768;
-    return isMob ? `${-20 * t}px` : "0%";
+    return isMob ? "0px" : "0%";
   });
   const card2RotateZ = useTransform(scrollYProgress, (v) => {
     if (v < 0.25) return -1;
     const t = Math.min(1, Math.max(0, (v - 0.25) / 0.55));
-    return -1 + -1 * t;
+    const isMob = typeof window !== "undefined" && window.innerWidth < 768;
+    return isMob ? 0 : -1 + -1 * t;
   });
 
-  // Card 3: Inner right card (55% X, 0% Y, 2deg tilt on desktop)
+  // Card 3: Inner right card (45% X, 0% Y, 2deg tilt on desktop)
   const card3X = useTransform(scrollYProgress, (v) => {
     if (v < 0.25) return "0%";
     const t = Math.min(1, Math.max(0, (v - 0.25) / 0.55));
     const isMob = typeof window !== "undefined" && window.innerWidth < 768;
-    return isMob ? "0%" : `${55 * t}%`;
+    return isMob ? "0%" : `${45 * t}%`;
   });
   const card3Y = useTransform(scrollYProgress, (v) => {
     if (v < 0.25) return "0%";
     const t = Math.min(1, Math.max(0, (v - 0.25) / 0.55));
     const isMob = typeof window !== "undefined" && window.innerWidth < 768;
-    return isMob ? `${20 * t}px` : "0%";
+    return isMob ? "0px" : "0%";
   });
   const card3RotateZ = useTransform(scrollYProgress, (v) => {
     if (v < 0.25) return 1;
     const t = Math.min(1, Math.max(0, (v - 0.25) / 0.55));
-    return 1 + 1 * t;
+    const isMob = typeof window !== "undefined" && window.innerWidth < 768;
+    return isMob ? 0 : 1 + 1 * t;
   });
 
-  // Card 4: Rightmost outer card (160% X, 0% Y, 7deg tilt on desktop)
+  // Card 4: Rightmost outer card (120% X, 0% Y, 7deg tilt on desktop)
   const card4X = useTransform(scrollYProgress, (v) => {
     if (v < 0.25) return "0%";
     const t = Math.min(1, Math.max(0, (v - 0.25) / 0.55));
     const isMob = typeof window !== "undefined" && window.innerWidth < 768;
-    return isMob ? "0%" : `${160 * t}%`;
+    return isMob ? "0%" : `${120 * t}%`;
   });
   const card4Y = useTransform(scrollYProgress, (v) => {
     if (v < 0.25) return "0%";
     const t = Math.min(1, Math.max(0, (v - 0.25) / 0.55));
     const isMob = typeof window !== "undefined" && window.innerWidth < 768;
-    return isMob ? `${60 * t}px` : "0%";
+    return isMob ? "0px" : `${10 * t}%`;
   });
   const card4RotateZ = useTransform(scrollYProgress, (v) => {
     if (v < 0.25) return 2;
     const t = Math.min(1, Math.max(0, (v - 0.25) / 0.55));
-    return 2 + 5 * t;
+    const isMob = typeof window !== "undefined" && window.innerWidth < 768;
+    return isMob ? 0 : 2 + 5 * t;
   });
 
   const cardTransforms = [
@@ -193,10 +211,10 @@ export default function SkillsDeck() {
     <section
       id="skills"
       ref={containerRef}
-      className="relative min-h-[300vh] bg-black border-t border-neutral-900 z-10 pt-10 pb-24 md:py-32"
+      className="relative md:min-h-[300vh] bg-black border-t border-neutral-900 z-10 pt-10 pb-24 md:py-32"
     >
       {/* ── Sticky Viewport Shell ── */}
-      <div className="sticky top-0 h-screen w-full flex flex-col justify-center items-center overflow-hidden px-4 sm:px-6 select-none">
+      <div className="md:sticky md:top-0 md:h-screen w-full flex flex-col items-center md:justify-center md:overflow-hidden px-4 sm:px-6 select-none">
         {/* Subtle Cyber Grid Background */}
         <div
           className="absolute inset-0 pointer-events-none opacity-[0.03]"
@@ -216,7 +234,7 @@ export default function SkillsDeck() {
             <span className="w-1.5 h-1.5 rounded-full bg-blue-400 animate-pulse" />
             3D ARCHITECTURE DECK
           </div>
-          <h2 className="text-2xl sm:text-4xl md:text-5xl font-black text-white tracking-tight break-words whitespace-normal">
+          <h2 className="text-3xl sm:text-4xl md:text-5xl font-black text-white tracking-tight break-words whitespace-normal">
             Engineering Architecture
           </h2>
         </div>
@@ -233,7 +251,7 @@ export default function SkillsDeck() {
               scale: deckScale,
               transformStyle: "preserve-3d",
             }}
-            className="relative w-[280px] h-[380px] md:w-[350px] md:h-[450px] flex items-center justify-center"
+            className="relative w-full md:w-[280px] lg:w-[320px] md:h-[380px] lg:h-[420px] flex flex-col md:block items-center justify-center gap-8 md:gap-0"
           >
             {SKILL_CARDS.map((card, i) => {
               const Icon = card.icon;
@@ -255,7 +273,7 @@ export default function SkillsDeck() {
                     y: -6,
                     transition: { duration: 0.22, ease: "easeOut" },
                   }}
-                  className="absolute inset-0 w-[280px] h-[380px] md:w-[350px] md:h-[450px] bg-gradient-to-b from-neutral-800 to-neutral-950 border-[0.5px] border-white/20 rounded-3xl shadow-2xl flex flex-col p-4 md:p-6 transition-colors duration-300 hover:border-blue-400/50 cursor-pointer group select-none overflow-hidden"
+                  className="relative md:absolute md:inset-0 w-[280px] h-[380px] md:w-[280px] lg:w-[320px] md:h-[380px] lg:h-[420px] bg-gradient-to-b from-neutral-800 to-neutral-950 border-[0.5px] border-white/20 rounded-3xl shadow-2xl flex flex-col p-5 md:p-6 transition-colors duration-300 hover:border-blue-400/50 cursor-pointer group select-none overflow-hidden"
                 >
                   {/* Subtle Metallic Brushed Texture & Glass Reflection */}
                   <div className="pointer-events-none absolute inset-0 bg-gradient-to-tr from-white/[0.04] via-transparent to-transparent rounded-3xl" />

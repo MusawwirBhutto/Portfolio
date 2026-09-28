@@ -62,7 +62,11 @@ export default function ProjectShowcase() {
   });
 
   // Map vertical scroll progress to horizontal translation
-  const x = useTransform(scrollYProgress, [0, 1], ["0%", "-62%"]);
+  const x = useTransform(scrollYProgress, (v) => {
+    const isMob = typeof window !== "undefined" && window.innerWidth < 768;
+    const max = isMob ? -68 : -62; // 72% ensures full visibility + padding on mobile
+    return `${v * max}%`;
+  });
 
   return (
     <section

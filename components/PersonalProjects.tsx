@@ -66,7 +66,7 @@ export default function PersonalProjects() {
 
       <div className="max-w-7xl mx-auto px-6 relative z-10">
         {/* Section Header */}
-        <div className="flex flex-col md:flex-row md:items-end justify-between gap-4 mb-14">
+        <div className="flex flex-col md:flex-row md:items-end justify-between gap-4 mb-8 md:mb-14">
           <div>
             <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-blue-500/10 border border-blue-500/20 text-blue-400 text-xs font-mono font-medium mb-3">
               <Terminal className="w-3.5 h-3.5" />

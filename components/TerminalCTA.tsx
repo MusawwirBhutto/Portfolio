@@ -97,8 +97,11 @@ export default function TerminalCTA() {
           </div>
 
           {/* Centered Window Title */}
-          <div className="text-xs font-mono text-neutral-300 truncate max-w-[200px] sm:max-w-md">
-            musawwir.softengr@gmail.com: ~/contact
+          <div className="text-xs font-mono text-neutral-300 truncate max-w-[120px] sm:max-w-md">
+            <span className="hidden sm:inline">
+              musawwir.softengr@gmail.com:{" "}
+            </span>
+            ~/contact
           </div>
 
           {/* Header Action: Highlighted Contact Me button */}
@@ -141,16 +144,19 @@ export default function TerminalCTA() {
                 animate={{ opacity: 1 }}
                 exit={{ opacity: 0, y: -10 }}
                 transition={{ duration: 0.3 }}
-                className="font-mono text-sm space-y-4 w-full"
+                className="font-mono text-xs md:text-sm space-y-4 w-full"
               >
                 {/* CLI Prompt Line: Authentic trigger string with clickable action prompt */}
                 <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-3 text-neutral-300 w-full pb-2 border-b border-neutral-800/40">
                   <div className="flex flex-wrap items-center gap-2">
-                    <span className="text-emerald-400 font-semibold">
+                    <span className="text-emerald-400 font-semibold hidden sm:inline">
                       musawwir.softengr@gmail.com
                     </span>
+                    <span className="text-emerald-400 font-semibold sm:hidden">
+                      musawwir
+                    </span>
                     <span className="text-blue-400 font-bold">~ %</span>
-                    <span className="text-neutral-200 font-mono tracking-tight">
+                    <span className="text-neutral-200 font-mono tracking-tight break-all sm:break-normal">
                       &gt; flutter run contact_form.dart --release
                     </span>
                   </div>

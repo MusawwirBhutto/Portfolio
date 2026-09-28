@@ -112,10 +112,10 @@ export default function ProjectShowcase() {
                 return (
                   <div
                     key={project.id}
-                    className="w-[85vw] md:w-[75vw] h-[70vh] flex flex-col md:flex-row bg-neutral-900/80 backdrop-blur-xl border border-white/10 rounded-[40px] overflow-hidden shrink-0 shadow-2xl relative"
+                    className="w-[90vw] md:w-[75vw] h-auto md:h-[70vh] flex flex-col-reverse md:flex-row bg-neutral-900/80 backdrop-blur-xl border border-white/10 rounded-[40px] overflow-hidden shrink-0 shadow-2xl relative"
                   >
                     {/* Left Side (Content - 40%) */}
-                    <div className="w-full md:w-[42%] lg:w-[40%] flex flex-col justify-center p-8 sm:p-12 md:p-16 z-10 shrink-0">
+                    <div className="w-full md:w-[40%] flex flex-col justify-center p-6 md:p-16 z-10 shrink-0">
                       {/* Index & Badge Indicator */}
                       <div className="flex items-center gap-3 mb-4">
                         <span className="text-sm font-mono font-bold tracking-widest text-blue-400">
@@ -131,7 +131,7 @@ export default function ProjectShowcase() {
                       </div>
 
                       {/* Title */}
-                      <h3 className="text-4xl md:text-5xl lg:text-6xl font-black text-white tracking-tight leading-[1.08] mb-4">
+                      <h3 className="text-3xl md:text-5xl lg:text-6xl font-black text-white tracking-tight leading-[1.08] mb-4">
                         {project.title}
                       </h3>
 
@@ -153,7 +153,7 @@ export default function ProjectShowcase() {
                     </div>
 
                     {/* Right Side (Visual - 60%) */}
-                    <div className="relative h-full w-full md:w-[58%] lg:w-[60%] flex-1 overflow-hidden">
+                    <div className="relative w-full md:w-[60%] h-[30vh] md:h-full overflow-hidden">
                       <Image
                         src={project.image}
                         alt={project.title}

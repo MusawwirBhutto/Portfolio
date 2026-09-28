@@ -149,11 +149,11 @@ export default function Home() {
 
             {/* Headline & Subtitle */}
             <div className="space-y-2.5">
-              <h1 className="text-3xl md:text-5xl font-black text-white tracking-tight leading-[1.1] [text-shadow:0_0_35px_rgba(59,130,246,0.25)]">
+              <h1 className="text-4xl md:text-6xl font-black text-white tracking-tight leading-[1.1] [text-shadow:0_0_35px_rgba(59,130,246,0.25)]">
                 Musawwir Bhutto
               </h1>
 
-              <h2 className="text-lg md:text-2xl font-bold bg-gradient-to-r from-sky-400 via-blue-300 to-sky-500 bg-clip-text text-transparent tracking-tight">
+              <h2 className="text-xl md:text-2xl font-bold bg-gradient-to-r from-sky-400 via-blue-300 to-sky-500 bg-clip-text text-transparent tracking-tight">
                 Mobile Architect & Flutter Specialist
               </h2>
             </div>
@@ -179,13 +179,13 @@ export default function Home() {
             </div>
 
             {/* Interactive Action Row */}
-            <div className="flex flex-wrap items-center gap-4 pt-2">
+            <div className="flex flex-col md:flex-row items-center w-full md:w-auto gap-4 pt-2">
               {/* Primary Button */}
               <motion.a
                 href="#projects"
                 whileHover={{ scale: 1.03 }}
                 whileTap={{ scale: 0.98 }}
-                className="group relative inline-flex items-center gap-2.5 px-6 py-3.5 rounded-xl bg-blue-600 hover:bg-blue-500 text-white font-semibold text-sm tracking-wide transition-all border border-blue-400/50 shadow-[0_0_25px_rgba(37,99,235,0.5)] hover:shadow-[0_0_40px_rgba(37,99,235,0.8)]"
+                className="group relative inline-flex items-center justify-center gap-2.5 px-6 py-3.5 rounded-xl bg-blue-600 hover:bg-blue-500 text-white font-semibold text-sm tracking-wide transition-all border border-blue-400/50 shadow-[0_0_25px_rgba(37,99,235,0.5)] hover:shadow-[0_0_40px_rgba(37,99,235,0.8)] w-full md:w-auto text-center"
               >
                 <span>View Case Studies</span>
                 <ArrowRight className="w-4 h-4 transition-transform group-hover:translate-x-1" />
@@ -198,7 +198,7 @@ export default function Home() {
                 rel="noopener noreferrer"
                 whileHover={{ scale: 1.03 }}
                 whileTap={{ scale: 0.98 }}
-                className="inline-flex items-center gap-2.5 px-6 py-3.5 rounded-xl backdrop-blur-md bg-white/[0.05] border border-white/10 hover:border-white/25 text-neutral-200 hover:text-white font-semibold text-sm tracking-wide transition-all shadow-lg hover:bg-white/[0.08]"
+                className="inline-flex items-center justify-center gap-2.5 px-6 py-3.5 rounded-xl backdrop-blur-md bg-white/[0.05] border border-white/10 hover:border-white/25 text-neutral-200 hover:text-white font-semibold text-sm tracking-wide transition-all shadow-lg hover:bg-white/[0.08] w-full md:w-auto text-center"
               >
                 <Code2 className="w-4 h-4 text-blue-400" />
                 <span>Inspect Code / GitHub</span>
@@ -211,7 +211,7 @@ export default function Home() {
                 download
                 whileHover={{ scale: 1.03 }}
                 whileTap={{ scale: 0.98 }}
-                className="px-6 py-3 rounded-xl font-medium border border-blue-500/30 text-blue-400 hover:bg-blue-500/10 transition-all flex items-center gap-2 text-sm tracking-wide"
+                className="px-6 py-3 rounded-xl font-medium border border-blue-500/30 text-blue-400 hover:bg-blue-500/10 transition-all flex items-center justify-center gap-2 text-sm tracking-wide w-full md:w-auto text-center"
               >
                 <Download className="w-4 h-4" />
                 <span>Download Resume</span>

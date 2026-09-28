@@ -222,112 +222,114 @@ export default function SkillsDeck() {
         </div>
 
         {/* ── 3D Card Deck Staging Container (Central Wrapper) ── */}
-        <div
-          style={{ perspective: "1200px" }}
-          className="relative w-full max-w-7xl flex items-center justify-center pt-2 sm:pt-4"
-        >
-          <motion.div
-            style={{
-              rotateX: deckRotateX,
-              y: deckY,
-              scale: deckScale,
-              transformStyle: "preserve-3d",
-            }}
-            className="relative w-[min(85vw,260px)] sm:w-[260px] lg:w-[min(22vw,260px)] h-[345px] sm:h-[355px] flex items-center justify-center"
+        <div className="transform scale-[0.75] md:scale-100 origin-center transition-transform">
+          <div
+            style={{ perspective: "1200px" }}
+            className="relative w-full max-w-7xl flex items-center justify-center pt-2 sm:pt-4"
           >
-            {SKILL_CARDS.map((card, i) => {
-              const Icon = card.icon;
-              const transform = cardTransforms[i];
+            <motion.div
+              style={{
+                rotateX: deckRotateX,
+                y: deckY,
+                scale: deckScale,
+                transformStyle: "preserve-3d",
+              }}
+              className="relative w-[min(85vw,260px)] sm:w-[260px] lg:w-[min(22vw,260px)] h-[345px] sm:h-[355px] flex items-center justify-center"
+            >
+              {SKILL_CARDS.map((card, i) => {
+                const Icon = card.icon;
+                const transform = cardTransforms[i];
 
-              return (
-                <motion.div
-                  key={card.id}
-                  style={{
-                    x: transform.x,
-                    y: transform.y,
-                    rotateZ: transform.rotateZ,
-                    transformStyle: "preserve-3d",
-                    zIndex: i + 10,
-                  }}
-                  whileHover={{
-                    scale: 1.05,
-                    zIndex: 60,
-                    y: -6,
-                    transition: { duration: 0.22, ease: "easeOut" },
-                  }}
-                  className="absolute inset-0 w-[min(85vw,260px)] sm:w-[260px] lg:w-[min(22vw,260px)] h-[345px] sm:h-[355px] bg-gradient-to-b from-neutral-800 to-neutral-950 border-[0.5px] border-white/20 rounded-3xl shadow-2xl flex flex-col p-4 sm:p-4.5 transition-colors duration-300 hover:border-blue-400/50 cursor-pointer group select-none overflow-hidden"
-                >
-                  {/* Subtle Metallic Brushed Texture & Glass Reflection */}
-                  <div className="pointer-events-none absolute inset-0 bg-gradient-to-tr from-white/[0.04] via-transparent to-transparent rounded-3xl" />
-                  <div
-                    className={`pointer-events-none absolute -top-24 -right-24 w-44 h-44 bg-gradient-to-br ${card.gradientGlow} blur-2xl rounded-full`}
-                  />
+                return (
+                  <motion.div
+                    key={card.id}
+                    style={{
+                      x: transform.x,
+                      y: transform.y,
+                      rotateZ: transform.rotateZ,
+                      transformStyle: "preserve-3d",
+                      zIndex: i + 10,
+                    }}
+                    whileHover={{
+                      scale: 1.05,
+                      zIndex: 60,
+                      y: -6,
+                      transition: { duration: 0.22, ease: "easeOut" },
+                    }}
+                    className="absolute inset-0 w-[min(85vw,260px)] sm:w-[260px] lg:w-[min(22vw,260px)] h-[345px] sm:h-[355px] bg-gradient-to-b from-neutral-800 to-neutral-950 border-[0.5px] border-white/20 rounded-3xl shadow-2xl flex flex-col p-4 sm:p-4.5 transition-colors duration-300 hover:border-blue-400/50 cursor-pointer group select-none overflow-hidden"
+                  >
+                    {/* Subtle Metallic Brushed Texture & Glass Reflection */}
+                    <div className="pointer-events-none absolute inset-0 bg-gradient-to-tr from-white/[0.04] via-transparent to-transparent rounded-3xl" />
+                    <div
+                      className={`pointer-events-none absolute -top-24 -right-24 w-44 h-44 bg-gradient-to-br ${card.gradientGlow} blur-2xl rounded-full`}
+                    />
 
-                  {/* ── Top Row: Smart Chip & Contactless Wave + Category ── */}
-                  <div className="relative z-10 flex items-start justify-between">
-                    <div className="flex items-center gap-2">
-                      <div className="w-9 h-6 rounded-md bg-gradient-to-br from-amber-200/60 via-yellow-400/40 to-amber-600/50 border border-amber-300/50 relative overflow-hidden shadow-inner flex items-center justify-center flex-shrink-0">
-                        <div className="absolute inset-0 grid grid-cols-2 grid-rows-2 gap-[1px] p-[1.5px]">
-                          <div className="border border-amber-800/40 rounded-tl-sm" />
-                          <div className="border border-amber-800/40 rounded-tr-sm" />
-                          <div className="border border-amber-800/40 rounded-bl-sm" />
-                          <div className="border border-amber-800/40 rounded-br-sm" />
+                    {/* ── Top Row: Smart Chip & Contactless Wave + Category ── */}
+                    <div className="relative z-10 flex items-start justify-between">
+                      <div className="flex items-center gap-2">
+                        <div className="w-9 h-6 rounded-md bg-gradient-to-br from-amber-200/60 via-yellow-400/40 to-amber-600/50 border border-amber-300/50 relative overflow-hidden shadow-inner flex items-center justify-center flex-shrink-0">
+                          <div className="absolute inset-0 grid grid-cols-2 grid-rows-2 gap-[1px] p-[1.5px]">
+                            <div className="border border-amber-800/40 rounded-tl-sm" />
+                            <div className="border border-amber-800/40 rounded-tr-sm" />
+                            <div className="border border-amber-800/40 rounded-bl-sm" />
+                            <div className="border border-amber-800/40 rounded-br-sm" />
+                          </div>
+                          <div className="w-2.5 h-2.5 rounded-full border border-amber-800/40 z-10" />
                         </div>
-                        <div className="w-2.5 h-2.5 rounded-full border border-amber-800/40 z-10" />
+
+                        <Wifi className="w-3.5 h-3.5 text-white/30 rotate-90" />
                       </div>
 
-                      <Wifi className="w-3.5 h-3.5 text-white/30 rotate-90" />
-                    </div>
-
-                    <div className="flex flex-col items-end">
-                      <div className="w-6.5 h-6.5 rounded-lg bg-neutral-900 border border-neutral-700/80 flex items-center justify-center text-blue-400 shadow-sm group-hover:border-blue-500/40 transition-colors">
-                        <Icon className="w-3.5 h-3.5" />
-                      </div>
-                      <span className="text-[8.5px] font-mono text-neutral-500 mt-0.5">
-                        {card.index}
-                      </span>
-                    </div>
-                  </div>
-
-                  {/* ── Card Title & Edition ── */}
-                  <div className="relative z-10 mt-2 mb-1.5">
-                    <h3 className="text-base sm:text-lg font-extrabold text-white tracking-tight leading-snug break-words whitespace-normal">
-                      {card.category}
-                    </h3>
-                    <p className="text-[9.5px] font-mono text-neutral-400 mt-0.5 tracking-wide break-words whitespace-normal">
-                      {card.cardEdition}
-                    </p>
-                  </div>
-
-                  {/* ── Sleek Vertical List of Skills ── */}
-                  <div className="relative z-10 flex flex-col space-y-1 my-auto">
-                    {card.skills.map((skill, sIdx) => (
-                      <div
-                        key={sIdx}
-                        className="px-2.5 py-1 rounded-xl bg-neutral-900/80 border border-white/5 group-hover:border-white/10 flex items-center gap-1.5 shadow-sm transition-all hover:bg-neutral-800/80 hover:border-blue-500/30"
-                      >
-                        <CheckCircle2 className="w-3 h-3 text-blue-400 flex-shrink-0" />
-                        <span className="text-[10.5px] font-medium text-neutral-200 tracking-tight break-words whitespace-normal truncate">
-                          {skill}
+                      <div className="flex flex-col items-end">
+                        <div className="w-6.5 h-6.5 rounded-lg bg-neutral-900 border border-neutral-700/80 flex items-center justify-center text-blue-400 shadow-sm group-hover:border-blue-500/40 transition-colors">
+                          <Icon className="w-3.5 h-3.5" />
+                        </div>
+                        <span className="text-[8.5px] font-mono text-neutral-500 mt-0.5">
+                          {card.index}
                         </span>
                       </div>
-                    ))}
-                  </div>
+                    </div>
 
-                  {/* ── Card Footer: Cardholder Stamp ── */}
-                  <div className="relative z-10 pt-2 border-t border-neutral-800/80 flex items-center justify-between text-[8.5px] font-mono text-neutral-400">
-                    <span className="tracking-wider text-neutral-300 font-semibold uppercase truncate">
-                      MUSAWWIR BHUTTO
-                    </span>
-                    <span className="text-blue-400 flex items-center gap-1 flex-shrink-0">
-                      <Sparkles className="w-3 h-3" />
-                      ARCHITECT
-                    </span>
-                  </div>
-                </motion.div>
-              );
-            })}
-          </motion.div>
+                    {/* ── Card Title & Edition ── */}
+                    <div className="relative z-10 mt-2 mb-1.5">
+                      <h3 className="text-base sm:text-lg font-extrabold text-white tracking-tight leading-snug break-words whitespace-normal">
+                        {card.category}
+                      </h3>
+                      <p className="text-[9.5px] font-mono text-neutral-400 mt-0.5 tracking-wide break-words whitespace-normal">
+                        {card.cardEdition}
+                      </p>
+                    </div>
+
+                    {/* ── Sleek Vertical List of Skills ── */}
+                    <div className="relative z-10 flex flex-col space-y-1 my-auto">
+                      {card.skills.map((skill, sIdx) => (
+                        <div
+                          key={sIdx}
+                          className="px-2.5 py-1 rounded-xl bg-neutral-900/80 border border-white/5 group-hover:border-white/10 flex items-center gap-1.5 shadow-sm transition-all hover:bg-neutral-800/80 hover:border-blue-500/30"
+                        >
+                          <CheckCircle2 className="w-3 h-3 text-blue-400 flex-shrink-0" />
+                          <span className="text-[10.5px] font-medium text-neutral-200 tracking-tight break-words whitespace-normal truncate">
+                            {skill}
+                          </span>
+                        </div>
+                      ))}
+                    </div>
+
+                    {/* ── Card Footer: Cardholder Stamp ── */}
+                    <div className="relative z-10 pt-2 border-t border-neutral-800/80 flex items-center justify-between text-[8.5px] font-mono text-neutral-400">
+                      <span className="tracking-wider text-neutral-300 font-semibold uppercase truncate">
+                        MUSAWWIR BHUTTO
+                      </span>
+                      <span className="text-blue-400 flex items-center gap-1 flex-shrink-0">
+                        <Sparkles className="w-3 h-3" />
+                        ARCHITECT
+                      </span>
+                    </div>
+                  </motion.div>
+                );
+              })}
+            </motion.div>
+          </div>
         </div>
       </div>
     </section>

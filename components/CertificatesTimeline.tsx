@@ -100,10 +100,10 @@ export default function CertificatesTimeline() {
       {/* ── Main Timeline Container ── */}
       <div className="max-w-5xl mx-auto px-6 relative">
         {/* Glowing Central Vertical Line */}
-        <div className="absolute left-4 sm:left-1/2 w-[2px] h-full bg-gradient-to-b from-blue-500/50 via-cyan-400/20 to-transparent -translate-x-1/2 top-0 pointer-events-none" />
+        <div className="absolute left-4 md:left-1/2 w-[2px] h-full bg-gradient-to-b from-blue-500/50 via-cyan-400/20 to-transparent -translate-x-1/2 top-0 pointer-events-none" />
 
         {/* ── Alternating Rows ── */}
-        <div className="space-y-12 sm:space-y-16">
+        <div className="space-y-12 md:space-y-16">
           {CERTIFICATES.map((cert, index) => {
             const isLeft = index % 2 === 0;
 
@@ -114,7 +114,7 @@ export default function CertificatesTimeline() {
                 viewport={{ once: true, margin: "-30px" }}
                 transition={{ duration: 0.6, ease: "easeOut" }}
                 whileHover={{ y: -6, transition: { duration: 0.2 } }}
-                className="w-[85%] sm:w-[45%] bg-neutral-900/60 backdrop-blur-md border border-white/10 rounded-2xl p-5 shadow-xl hover:border-blue-500/30 hover:shadow-[0_0_30px_rgba(59,130,246,0.15)] transition-all group ml-8 sm:ml-0"
+                className="w-full bg-neutral-900/60 backdrop-blur-md border border-white/10 rounded-2xl p-5 shadow-xl hover:border-blue-500/30 hover:shadow-[0_0_30px_rgba(59,130,246,0.15)] transition-all group"
               >
                 {/* Certificate Image Frame */}
                 <div className="aspect-video relative w-full rounded-xl overflow-hidden bg-black/60 border border-white/5 mb-4">
@@ -155,7 +155,7 @@ export default function CertificatesTimeline() {
             return (
               <div
                 key={cert.id}
-                className="flex items-center w-full relative pl-4 sm:pl-0"
+                className="relative flex items-center justify-between w-full"
               >
                 {/* Central Glowing Node */}
                 <motion.div
@@ -163,20 +163,23 @@ export default function CertificatesTimeline() {
                   whileInView={{ scale: 1, opacity: 1 }}
                   viewport={{ once: true, margin: "-30px" }}
                   transition={{ type: "spring", stiffness: 300, damping: 20 }}
-                  className="absolute left-4 sm:left-1/2 -translate-x-1/2 w-4 h-4 rounded-full bg-black border-2 border-blue-500 shadow-[0_0_15px_rgba(59,130,246,0.8)] z-10"
+                  className="absolute left-4 md:left-1/2 -translate-x-1/2 w-4 h-4 rounded-full bg-black border-2 border-blue-500 shadow-[0_0_15px_rgba(59,130,246,0.8)] z-10"
                 />
 
-                {/* On mobile: all cards go right. On sm+: alternating left/right */}
-                <div className="hidden sm:block sm:w-[45%]">
+                {/* Desktop Left Card / Spacer */}
+                <div className="hidden md:block md:w-[45%]">
                   {isLeft ? cardContent : null}
                 </div>
-                <div className="hidden sm:block sm:w-[10%]" />
-                <div className="hidden sm:block sm:w-[45%]">
+
+                {/* Desktop Right Card / Spacer */}
+                <div className="hidden md:block md:w-[45%]">
                   {!isLeft ? cardContent : null}
                 </div>
 
-                {/* Mobile: always show card on the right side */}
-                <div className="sm:hidden w-full">{cardContent}</div>
+                {/* Mobile Card */}
+                <div className="md:hidden w-[calc(100%-3rem)] ml-auto">
+                  {cardContent}
+                </div>
               </div>
             );
           })}

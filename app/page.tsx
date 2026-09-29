@@ -15,6 +15,7 @@ import InteractivePhone from "@/components/InteractivePhone";
 import ProjectShowcase from "@/components/ProjectShowcase";
 import PersonalProjects from "@/components/PersonalProjects";
 import SkillsDeck from "@/components/SkillsDeck";
+import TechReactor from "@/components/TechReactor";
 import CertificatesTimeline from "@/components/CertificatesTimeline";
 import TerminalCTA from "@/components/TerminalCTA";
 import { getAssetPath } from "@/utils/assetPath";
@@ -237,6 +238,9 @@ export default function Home() {
 
       {/* ── 3D Card Deck Spread: Engineering Architecture ── */}
       <SkillsDeck />
+
+      {/* ── Arsenal & Core Technologies (Neural Reactor) ── */}
+      <TechReactor />
 
       {/* ── Glowing Vertical Timeline: Milestones & Recognition ── */}
       <CertificatesTimeline />

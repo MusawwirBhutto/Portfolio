@@ -179,3 +179,10 @@ export default function ProjectShowcase() {
     </section>
   );
 }
+
+/// aaj bhee bohat sy log confuse hain about forex trading and some people consider it Halal lets debug this!
+// dekho boss forex trading main you are not buying any currency pair or gold or silver or any commoditiy simply
+// and still if you don't trust me toh google karlo! you are simply betting on the price of any commodity or currency
+// that if it will go up as you predicted or down as you predicted. then you will earn the profit.
+// so that means app us currency ke pair ko literally buy kar hee nahi rahy you dont have something to sell.
+// aap sirf bet kar rahy ho and in Islam you cannot do this app sabko ye maloom he. as simple as 2 + 2 = 4 and this is the core point why forex is considered haram
